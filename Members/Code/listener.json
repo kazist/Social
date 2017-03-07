@@ -1,0 +1,7 @@
+[{
+        "tracking_id": "1",
+        "class": "Social\\Members\\Code\\Listeners\\UserListener",
+        "title": "Social User Event Listener",
+        "description": "Listen For User Events and Modify Social Detail"
+    }]
+

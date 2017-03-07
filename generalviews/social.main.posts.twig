@@ -1,0 +1,14 @@
+
+{% import "form.macro.twig" as forms %}
+
+{% set path_set = addTwigPath( "applications.Social.generalviews.post") %}
+{% set params = {'show_all' : true } %}
+
+{% set posts = callFunction( "Social.Members.Code.Models.MembersModel", 'getPosts', params ) %}
+{% set user = callFunction( "Social.Members.Code.Models.MembersModel", 'getUser' ) %}
+
+{% if document.user.id %}
+    {% include "social.postform.twig" %}
+{% endif %}
+
+{% include "social.posts.twig" ignore missing with posts %}

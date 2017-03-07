@@ -1,0 +1,18 @@
+
+<div class="social-friends social_block">
+    <h5> Friends</h5> 
+
+    <div class="friends">
+        {% if member.friends|length>0 %}
+            {% for friend in member.friends%}
+                <div class="friend">
+                    <a href="{{ generate_url('social.members.detail', {'user_id': member.user_id}) }}" title="View {{ friend.member_name }}">
+                        <img src="{{ resized_image(friend.avatar,90,90) }}"data-toggle="tooltip" alt="Name: {{ friend.member_name }}" title="Name: {{ friend.member_name }}"/>
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            No Friends Add Yet.
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,46 @@
+
+<div class="social-menu ">
+    <ul>
+        <li class="social-box {% if social_view == 'member' %}arrow_box{% endif %}">
+            <a href="{{ generate_url('social.members.detail', {'user_id': member.personal.user_id}) }}" title='Home'>
+                Home
+            </a>
+        </li>
+        <li class="social-box {% if social_view == 'friend' %}arrow_box{% endif %}">
+            <a href="{{ generate_url('social.members.friend', {'user_id': member.personal.user_id}) }}" title='Friends'>
+                Friends <span class="label label-default">{{ member.friends_count|number_format() }}</span>
+            </a>
+        </li>
+        <li class="social-box {% if social_view == 'group' %}arrow_box{% endif %}">
+            <a href="{{ generate_url('social.members.group', {'user_id': member.personal.user_id}) }}" title='Groups'>
+                Groups <span class="label label-default">{{ member.groups_count|number_format() }}</span>
+            </a>
+        </li>
+        <li class="social-box {% if social_view == 'photo' %}arrow_box{% endif %}">
+            <a href="{{ generate_url('social.members.photo', {'user_id': member.personal.user_id}) }}" title='Photos'>
+                Photos <span class="label label-default">{{ member.images_count|number_format() }}</span>
+            </a>
+        </li>
+        <li class="social-box {% if social_view == 'video' %}arrow_box{% endif %}">
+            <a href="{{ generate_url('social.members.video', {'user_id': member.personal.user_id}) }}" title='Videos'>
+                Videos <span class="label label-default">{{ member.videos_count|number_format() }}</span>
+            </a>
+        </li>
+        <li class="social-box {% if social_view == 'audio' %}arrow_box{% endif %}">
+            <a href="{{ generate_url('social.members.audio', {'user_id': member.personal.user_id}) }}" title='Audios'>
+                Audios <span class="label label-default">{{ member.audios_count|number_format() }}</span>
+            </a>
+        </li>
+        <li class="social-box {% if social_view == 'event' %}arrow_box{% endif %}">
+            <a href="{{ generate_url('social.members.event', {'user_id': member.personal.user_id}) }}" title='Events'>
+                Events <span class="label label-default">{{ member.events_count|number_format() }}</span>
+            </a>
+        </li>
+        <li class="social-box social-box-right">
+            <a class="member-like-link" Likes='Home'>
+                Likes <span class="label label-danger">1</span>
+            </a>
+        </li>
+    </ul>
+    <div class="clearfix"></div>       
+</div>

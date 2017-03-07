@@ -1,0 +1,19 @@
+
+<div class="social-groups social_block">
+    <h5>Groups</h5> 
+
+    <div class="groups">
+        {% if member.groups|length>0 %}
+            {% for group in member.groups%}
+                <div class="group">
+                    <img src="{{ resized_image(group.image_file,90,90) }}" alt="{{ group.title }}" title="{{ group.title }}" align="left" data-toggle="tooltip" title="{{ group.description|striptags|truncate(50)|raw }}"/>
+                    <b class="text-capitalize">{{ group.title }}</b><br>
+                    <a class=" btn btn-default btn-xs"> Join Group</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            No Group Joined Yet.
+        {% endif %}
+    </div>
+    <div class="clr"></div>
+</div>

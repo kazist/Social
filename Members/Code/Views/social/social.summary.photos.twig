@@ -1,0 +1,17 @@
+
+<div class="social-photos social_block">
+    <h5>Photos</h5> 
+
+    <div class="photos">
+        {% if member.photos|length>0 %}
+            {% for photo in member.photos%}
+                <div class="photo">
+                    <img src="{{ resized_image(photo.file,90,90) }}" alt="{{ photo.title }}" title="{{ photo.title }}"/>
+                </div>
+            {% endfor %}
+        {% else %}
+            No Photo Add Yet.
+        {% endif %}
+    </div>
+    <div class="clearfix"></div>
+</div>

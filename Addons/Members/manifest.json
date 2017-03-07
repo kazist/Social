@@ -1,0 +1,10 @@
+{
+    "name": "members",
+    "title": "Members Listing",
+    "explanation": "Members Listing",
+    "description": "Members Listing",
+    "version": 1,
+    "icon": "assets\/social\/addons\/members\/icon.png",
+    "extension": "addon",
+    "path": "social\/addons\/members\/"
+}

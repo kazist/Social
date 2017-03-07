@@ -1,0 +1,241 @@
+{
+    "frontend": [{
+            "title": "Post List",
+            "description": "Management of Posts.",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\PostsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "social.groups.posts",
+            "route": "social/groups/posts",
+            "arguments": "",
+            "keywords": "post, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Post",
+            "description": "Add Post .",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\PostsController::addAction",
+            "unique_name": "social.groups.posts.add",
+            "route": "social/groups/posts/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "post,add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"],
+                "MODERATOR": ["can_add"],
+                "USER": ["can_add"]
+            }
+        }, {
+            "title": "Edit Post {{ item.name }}",
+            "description": "Edit Post {{ item.name }}.",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\PostsController::editAction",
+            "unique_name": "social.groups.posts.edit",
+            "route": "social/groups/posts/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "post, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }, {
+            "title": "Post Detail: {{ item.name }}",
+            "description": "Post Detail: {{ item.name }}",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\PostsController::detailAction",
+            "unique_name": "social.groups.posts.detail",
+            "route": "social/groups/posts/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "post, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view"],
+                "ADMIN": ["can_view"],
+                "MODERATOR": ["can_view"],
+                "USER": ["can_view"]
+            }
+        }, {
+            "title": "Post Delete: {{ item.name }}",
+            "description": "Post Delete: {{ item.name }}",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\PostsController::deleteAction",
+            "unique_name": "social.groups.posts.delete",
+            "route": "social/groups/posts/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "post, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"],
+                "MODERATOR": ["can_delete", "can_deleteown"],
+                "USER": ["can_deleteown"]
+            }
+        }, {
+            "title": "Post Save: {{ item.name }}",
+            "description": "Post Save: {{ item.name }}",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\PostsController::saveAction",
+            "unique_name": "social.groups.posts.save",
+            "route": "social/groups/posts/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "post, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\Admin\\PostsController::taskAction",
+            "unique_name": "admin.social.groups.posts.task",
+            "route": "admin/social/groups/posts/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "posts, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Post List",
+            "description": "Management of Posts.",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\Admin\\PostsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.social.groups.posts",
+            "route": "admin/social/groups/posts",
+            "arguments": "",
+            "keywords": "post, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Post ",
+            "description": "Add Post.",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\Admin\\PostsController::addAction",
+            "unique_name": "admin.social.groups.posts.add",
+            "route": "admin/social/groups/posts/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "post, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Post {{ item.name }}",
+            "description": "Edit Post {{ item.name }}.",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\Admin\\PostsController::editAction",
+            "unique_name": "admin.social.groups.posts.edit",
+            "route": "admin/social/groups/posts/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "post, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Post Detail: {{ item.name }}",
+            "description": "Post Detail: {{ item.name }}",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\Admin\\PostsController::detailAction",
+            "unique_name": "admin.social.groups.posts.detail",
+            "route": "admin/social/groups/posts/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "post, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Post Delete: {{ item.name }}",
+            "description": "Post Delete: {{ item.name }}",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\Admin\\PostsController::deleteAction",
+            "unique_name": "admin.social.groups.posts.delete",
+            "route": "admin/social/groups/posts/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "post, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Post Save: {{ item.name }}",
+            "description": "Post Save: {{ item.name }}",
+            "controller": "Social\\Groups\\Posts\\Code\\Controllers\\Admin\\PostsController::saveAction",
+            "unique_name": "admin.social.groups.posts.save",
+            "route": "admin/social/groups/posts/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "post, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

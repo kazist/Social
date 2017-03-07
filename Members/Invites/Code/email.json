@@ -1,0 +1,9 @@
+{
+    "layout": [{
+            "tracking_id": "1",
+            "unique_name": "social.members.invites.sendinvite",
+            "subject": "You have an invitation from {{ user.name }}",
+            "sms": "You have an invitation from {{ user.name }}",
+            "body": "Dear {{ user.name }}"
+        }]
+}

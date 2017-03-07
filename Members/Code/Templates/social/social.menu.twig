@@ -1,0 +1,46 @@
+
+<div class="social-menu ">
+    <ul>
+        <li class="social-box arrow_box">
+            <a href="{{ friendly_url('app=social&com=member&subset=member&view=detail&user_id=' ~ member.personal.user_id) }}" title="Home">
+                Home
+            </a>
+        </li>
+        <li class="social-box">
+            <a href="{{ friendly_url('app=social&com=member&subset=member&view=friend&user_id=' ~ member.personal.user_id) }}" title="Friends">
+                Friends <span class="label label-default">1</span>
+            </a>
+        </li>
+        <li class="social-box">
+            <a href="{{ friendly_url('app=social&com=member&subset=member&view=group&user_id=' ~ member.personal.user_id) }}" title="Groups">
+                Groups <span class="label label-default">4</span>
+            </a>
+        </li>
+        <li class="social-box">
+            <a href="{{ friendly_url('app=social&com=member&subset=member&view=photo&user_id=' ~ member.personal.user_id) }}" title="Photos">
+                Photos <span class="label label-default">4</span>
+            </a>
+        </li>
+        <li class="social-box">
+            <a href="{{ friendly_url('app=social&com=member&subset=member&view=video&user_id=' ~ member.personal.user_id) }}" title="Videos">
+                Videos <span class="label label-default">10</span>
+            </a>
+        </li>
+        <li class="social-box">
+            <a href="{{ friendly_url('app=social&com=member&subset=member&view=audio&user_id=' ~ member.personal.user_id) }}" title="Audios">
+                Audios <span class="label label-default">10</span>
+            </a>
+        </li>
+        <li class="social-box">
+            <a href="{{ friendly_url('app=social&com=member&subset=member&view=event&user_id=' ~ member.personal.user_id) }}" title="Events">
+                Events <span class="label label-default">10</span>
+            </a>
+        </li>
+        <li class="social-box social-box-right">
+            <a class="member-like-link" title="Likes">
+                Likes <span class="label label-danger">1</span>
+            </a>
+        </li>
+    </ul>
+    <div class="clr"></div>       
+</div>

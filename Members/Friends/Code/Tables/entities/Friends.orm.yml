@@ -1,0 +1,48 @@
+Social\Members\Friends\Code\Tables\Friends:
+  table: social_members_friends
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    user_id:
+      name: user_id
+      type: integer
+      length: 11
+      nullable: false
+    friend_id:
+      name: friend_id
+      type: integer
+      length: 11
+      nullable: false
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: true
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: true
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: true
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: true
+  indexes:
+    user_id_index:
+      columns: [user_id]
+    friend_id_index:
+      columns: [friend_id]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

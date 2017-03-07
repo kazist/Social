@@ -1,0 +1,204 @@
+ 
+{% import "form.macro.twig" as forms %}
+
+<div class="social-postform">
+
+    <form method="Post" action="{{ generate_url('social.posts.save') }}" enctype="multipart/form-data">
+        
+        {{ forms.input('post', 'textarea')  }}
+        
+        <div class="additional_fields">
+
+            <div class="photos-form" style="display: none;">
+                <a class="fa fa-times-circle close-field"></a>
+                <div class="photos-fields">
+                    <div class="photo">
+                        <div class="photo-wrapper">
+                            <i class="fa fa-plus "></i> Add Photos
+                        </div>
+                        <input class="upload_photo" type="file" name="form[photo][]" accept="image/*" style="display: none;">
+                    </div>
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="videos-form" style="display: none;">
+
+                <a class="fa fa-times-circle close-field"></a>
+                <div class="videos-form-tabs">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active video_youtube_tab"><a href="#video_youtube" aria-controls="video_youtube" role="tab" data-toggle="tab" title='Youtube'>Youtube</a></li>
+                        <li role="presentation" class="video_embed_tab"><a href="#video_embed_code" aria-controls="video_embed_code" role="tab" data-toggle="tab" title='Video Embed Code'>Video Embed Code</a></li>
+                        <li role="presentation" class="video_file_tab"><a href="#video_file" aria-controls="video_file" role="tab" data-toggle="tab" title='Upload Video File'>Upload Video File</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+
+                        <div role="tabpanel" class="tab-pane active" id="video_youtube">
+                            <div class="form-horizontal">
+                                <div class="form-group youtube-group">
+                                    <label for="video_youtube" class="col-sm-3 control-label">Youtube</label>
+                                    <div class="col-sm-9 kazicode-form-field">
+                                        {{ forms.input('youtube', 'text')  }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="video_embed_code">
+                            <div class="form-horizontal">
+                                <div class="form-group embed_code-group">
+                                    <label for="video_embed_code" class="col-sm-3 control-label">Video Embed Code</label>
+                                    <div class="col-sm-9 kazicode-form-field">
+                                        {{ forms.input('embed_code', 'textarea')  }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="video_file">
+                            <div class="form-horizontal">
+                                <div class="form-group video_file-group">
+                                    <label for="video_file" class="col-sm-3 control-label">Upload Video File</label>
+                                    <div class="col-sm-9 kazicode-form-field">
+                                        {{ forms.input('video_file', 'file', null, null, null, null, ' accept="video/*"')  }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                {{ forms.input('video_type', 'hidden','youtube')  }} 
+            </div>
+
+            <div class="audios-form" style="display: none;">
+                <a class="fa fa-times-circle close-field"></a>
+                <div class="audios-form-tabs">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active audio_embed_tab"><a href="#audio_embed_code" aria-controls="audio_embed_code" role="tab" data-toggle="tab" title='Video Embed Code'>Video Embed Code</a></li>
+                        <li role="presentation" class="audio_file_tab"><a href="#audio_file" aria-controls="audio_file" role="tab" data-toggle="tab" title='Upload Video File'>Upload Video File</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+
+                        <div role="tabpanel" class="tab-pane active" id="audio_embed_code">
+                            <div class="form-horizontal">
+                                <div class="form-group embed_code-group">
+                                    <label for="audio_embed_code" class="col-sm-3 control-label">Video Embed Code</label>
+                                    <div class="col-sm-9 kazicode-form-field">
+                                        {{ forms.input('embed_code', 'textarea')  }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="audio_file">
+                            <div class="form-horizontal">
+                                <div class="form-group audio_file-group">
+                                    <label for="audio_file" class="col-sm-3 control-label">Upload Audio File</label>
+                                    <div class="col-sm-9 kazicode-form-field">
+                                        {{ forms.input('audio_file', 'file', null, null, null, null, ' accept="audio/*"')  }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+
+                {{ forms.input('audio_type', 'hidden','embed')  }} 
+            </div>  
+
+
+            <div class="events-form" style="display: none;">
+                <a class="fa fa-times-circle close-field"></a>
+                <div class="events-fields form-horizontal">
+                    <div class="form-group audios_url-group col-sm-3 event-field">
+                        <label for="event_start_date" class="control-label">Start/End Date</label>
+                        <div class="kazicode-form-field">
+                            {{ forms.input('start_date', 'date')  }}
+                        </div>
+                    </div>
+                    <div class="form-group audios_url-group col-sm-3 event-field">
+                        <label for="event_end_date" class="control-label">&nbsp;</label>
+                        <div class="kazicode-form-field">
+                            {{ forms.input('end_date', 'date')  }}
+                        </div>
+                    </div>
+                    <div class="form-group audios_url-group col-sm-3 event-field">
+                        <label for="event_start_time" class="control-label">Start/Time Time</label>
+                        <div class="kazicode-form-field">
+                            {{ forms.input('start_time', 'time')  }}
+                        </div>
+                    </div>
+                    <div class="form-group audios_url-group col-sm-3 event-field">
+                        <label for="event_end_time" class="control-label">&nbsp;</label>
+                        <div class="kazicode-form-field">
+                            {{ forms.input('end_time', 'time')  }}
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>    
+
+            {{ forms.input('has_photos', 'hidden')  }}          
+            {{ forms.input('has_videos', 'hidden')  }}          
+            {{ forms.input('has_audios', 'hidden')  }}          
+            {{ forms.input('has_events', 'hidden')  }} 
+
+        </div>
+
+
+        <div class="social-postaddition">
+            <ul>
+                <li class="post-active">
+                    <a id="social-post-status">
+                        <i class="fa fa-pencil"></i> Post Status
+                    </a>
+                </li>
+                <li>
+                    <a id="social-post-photos">
+                        <i class="fa fa-camera"></i> Photos
+                    </a>
+                </li>
+                <li>
+                    <a id="social-post-videos">
+                        <i class="fa fa-video-camera"></i> Videos
+                    </a>
+                </li>
+                <li>
+                    <a id="social-post-audios">
+                        <i class="fa fa-play"></i> Audios
+                    </a>
+                </li>
+
+                <li>
+                    <a id="social-post-events">
+                        <i class="fa fa-calendar"></i> Events
+                    </a>
+                </li>
+
+                <li class="post-right">
+                    <input class="btn btn-success btn-xs" name="post" value="Post" type="submit" />
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+
+        {{ forms.input(' return_url', 'hidden', generate_url( document.extension_path|replace({'/':'.'})|lower )) }}  
+
+        {{ forms.input('_token' ) }} 
+
+    </form>
+
+</div>
+<div class="clearfix"></div>

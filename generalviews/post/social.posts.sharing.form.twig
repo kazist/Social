@@ -1,0 +1,13 @@
+<div class="post-sharing-form post-sharing-addition"  item_id="{{post.id}}"> 
+
+    <div class="post-sharing-input">
+        {{ forms.input('post_sharing', 'textarea', null, null, null, null, 'row="3"' )  }}
+    </div>
+
+    <input class="btn btn-warning btn-xs post-sharing-save pull-right" name="post" value="Share Post" accept="image/*" type="submit"  item_id="{{post.id}}" />
+
+    <div class="clearfix"></div>
+
+    <div class="post-sharing-content"></div>
+
+</div>

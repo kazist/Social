@@ -1,0 +1,243 @@
+{
+    "frontend": [{
+            "title": "Invite List",
+            "description": "Management of Invites.",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\InvitesController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "social.groups.invites",
+            "route": "social/groups/invites",
+            "arguments": "",
+            "keywords": "invite, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_viewown"]
+            }
+        }, {
+            "title": "Add Invite  ",
+            "description": "Add Invite .",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\InvitesController::addAction",
+            "unique_name": "social.groups.invites.add",
+            "route": "social/groups/invites/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "invite,add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"],
+                "MODERATOR": ["can_add"],
+                "USER": ["can_add"]
+            }
+        }, {
+            "title": "Edit Invite {{ item.name }}",
+            "description": "Edit Invite {{ item.name }}.",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\InvitesController::editAction",
+            "unique_name": "social.groups.invites.edit",
+            "route": "social/groups/invites/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "invite, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }, {
+            "title": "Invite Detail: {{ item.name }}",
+            "description": "Invite Detail: {{ item.name }}",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\InvitesController::detailAction",
+            "unique_name": "social.groups.invites.detail",
+            "route": "social/groups/invites/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "invite, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_viewown"]
+            }
+        }, {
+            "title": "Invite Delete: {{ item.name }}",
+            "description": "Invite Delete: {{ item.name }}",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\InvitesController::deleteAction",
+            "unique_name": "social.groups.invites.delete",
+            "route": "social/groups/invites/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "invite, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"],
+                "MODERATOR": ["can_delete", "can_deleteown"],
+                "USER": ["can_deleteown"]
+            }
+        }, {
+            "title": "Invite Save: {{ item.name }}",
+            "description": "Invite Save: {{ item.name }}",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\InvitesController::saveAction",
+            "unique_name": "social.groups.invites.save",
+            "route": "social/groups/invites/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "invite, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\Admin\\InvitesController::taskAction",
+            "unique_name": "admin.social.groups.invites.task",
+            "route": "admin/social/groups/invites/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "invites, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Invite List",
+            "description": "Management of Invites.",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\Admin\\InvitesController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.social.groups.invites",
+            "route": "admin/social/groups/invites",
+            "arguments": "",
+            "keywords": "invite, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Invite  ",
+            "description": "Add Invite .",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\Admin\\InvitesController::addAction",
+            "unique_name": "admin.social.groups.invites.add",
+            "route": "admin/social/groups/invites/add",
+            "permissions": "can_add",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "invite,add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Invite {{ item.name }}",
+            "description": "Edit Invite {{ item.name }}.",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\Admin\\InvitesController::editAction",
+            "unique_name": "admin.social.groups.invites.edit",
+            "route": "admin/social/groups/invites/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "invite, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Invite Detail: {{ item.name }}",
+            "description": "Invite Detail: {{ item.name }}",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\Admin\\InvitesController::detailAction",
+            "unique_name": "admin.social.groups.invites.detail",
+            "route": "admin/social/groups/invites/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "invite, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Invite Delete: {{ item.name }}",
+            "description": "Invite Delete: {{ item.name }}",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\Admin\\InvitesController::deleteAction",
+            "unique_name": "admin.social.groups.invites.delete",
+            "route": "admin/social/groups/invites/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "invite, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Invite Save: {{ item.name }}",
+            "description": "Invite Save: {{ item.name }}",
+            "controller": "Social\\Groups\\Invites\\Code\\Controllers\\Admin\\InvitesController::saveAction",
+            "unique_name": "admin.social.groups.invites.save",
+            "route": "admin/social/groups/invites/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "invite, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

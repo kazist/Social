@@ -1,0 +1,65 @@
+Social\Posts\Audios\Code\Tables\Audios:
+  table: social_posts_audios
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    title:
+      name: title
+      type: string
+      length: 255
+      nullable: false
+    file:
+      name: file
+      type: string
+      length: 255
+      nullable: false
+    media_id:
+      name: media_id
+      type: integer
+      length: 11
+      nullable: true
+    post_id:
+      name: post_id
+      type: integer
+      length: 11
+      nullable: true
+    embed_code:
+      name: embed_code
+      type: text
+      nullable: true
+    type:
+      name: type
+      type: string
+      length: 255
+      nullable: true
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: false
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: false
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: false
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: false
+  indexes:
+    post_id_index:
+      columns: [post_id]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

@@ -1,0 +1,14 @@
+<div class="post-comment-form post-comment-addition"  item_id="{{post.id}}"> 
+    <div class="post-comment-avatar">
+        <img src="{{ resized_image(post.user.media_file, 150,150) }}" alt="{{ post.user.name }}" title="{{ post.user.name }}" align="left"/>
+    </div>
+    <div class="post-comment-input">
+        {{ forms.input('post_comment', 'textarea', null, null, null, null, 'row="1"' )  }}
+    </div>
+    <ul>
+        <li class="post-right">
+            <input class="btn btn-warning btn-xs post-comment-save" name="post" value="Post Comment" accept="image/*" type="submit" />
+        </li>
+    </ul>
+    <div class="clearfix"></div>
+</div>

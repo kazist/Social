@@ -1,0 +1,30 @@
+
+{{ set_assets('applications/Social/Addons/Events/assets/css/style.css') }}
+
+<div class="social-events">
+    {% if events|length > 0 %}
+        {% for event in events %}
+            <div class="social-event">
+                <div class="info-box">
+                    <span class="info-box-icon bg-aqua">
+                        {{ event.start_date|date('d M Y') }}<br>
+                        - <br>
+                        {{ event.end_date|date('d M Y') }}<br>
+                    </span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            <a>
+                                {{ event.title }}
+                            </a>
+                        </span>
+                        <span class="info-box-text">{{ event.start_time|date('H:i A')  }} - {{ event.end_time|date('H:i A')  }}</span>
+                        <span class="info-box-text">
+                            <i class="fa fa-user"></i> {{ event.author_name }} &nbsp; &nbsp;
+                            <i class="fa fa-calendar"></i> {{ event.date_created|date('d M Y H:i') }}
+                        </span>
+                    </div><!-- /.info-box-content -->
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>

@@ -1,0 +1,44 @@
+
+{% import "form.macro.twig" as forms %}
+
+<div class="social-posts">
+    {% if posts|length>0 %}
+        {% for post in posts %}
+            <div id="social-post_{{ post.id }}" class="social-post">
+
+                {{ include('social.posts.user.twig') }}
+                {{ include('social.posts.content.twig') }}
+
+                <div class="post-shared-content-wrapper">
+                    {{ post.sharing|raw }}
+                </div>
+                
+                {{ include('social.posts.likeshare.twig') }}
+
+                <div class="post-comment-wrapper" style="display: none;">
+                    {{ include('social.posts.comments.summary.twig') }}
+                    {{ include('social.posts.comments.twig') }}
+
+                    {% if document.user.id %}
+                        {{ include('social.posts.comment.form.twig') }}
+                    {% endif %}
+                </div>
+
+                <div class="post-sharing-wrapper" style="display: none;">
+                    {{ include('social.posts.sharing.form.twig') }}
+                </div>
+
+            </div>
+        {% endfor %}
+        {{ include('social.posts.loadmore.twig') }}
+
+    {% else %}
+        <div class="no_posts_found">
+            No  Posts Found.
+        </div>
+    {% endif %}
+</div>
+
+<div class="sample_comment_form" style="display: none">
+    {{ include('social.posts.comment.form.twig') }}
+</div>

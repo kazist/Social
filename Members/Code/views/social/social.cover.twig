@@ -1,0 +1,20 @@
+
+<div class="social-cover">
+    <a class="edit-image" href="{{ generate_url('social.members.edit', {'user_id':document.user.id, 'action':'changepicture'})}}"><i class="fa fa-camera"></i> Edit Cover</a>
+    <img src="{{ resized_image(member.personal.cover_file) }}"/>
+</div>
+
+<div class="social-avatar-section">
+    <div class="social-avatar col-md-3">
+        <a class="edit-image" href="{{ generate_url('social.members.edit', {'user_id':document.user.id, 'action':'changeavatar'})}}"><i class="fa fa-camera"></i> Edit Avatar</a>
+        <img src="{{ resized_image(member.personal.avatar_file, 150, 150) }}" alt="{{ member.avatar_title }}" title="{{ member.avatar_title }}"/>
+    </div>
+    <div class="social-name col-md-9">
+        <h1> {{ member.name }} </h1>
+        <div class="social-view-share">
+            <a><i class="fa fa-eye"></i> Views </a>  &nbsp; &nbsp;
+            <a><i class="fa fa-share"></i> Share </a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>  

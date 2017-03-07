@@ -1,0 +1,33 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Social/assets/css/style.css') }}
+{{ set_assets('applications/Social/assets/js/social.js') }}
+
+{% set path_set = addTwigPath( "applications.Social.generalviews") %}
+
+<div class="clearfix"></div>
+
+{% include "social.main.top.menu.twig" ignore missing  %}
+
+<div class="social-members">
+    {% if items|length > 0 %}
+        {% for item in items %}
+
+            {% set item_url =  generate_url('social.members.detail', {'user_id': item.user_id}) %}
+
+            <div class="col-sm-3">
+                <div class="social-member">
+                    <a href="{{ item_url }}" title="{{item.user.name}}">
+                        {{ item.user.name|default(' -- Not Provided -- ') }}
+                    </a>
+
+                    <a href="{{ item_url }}" title="{{ item.user.name }}">
+                        <img src="{{ resized_image(item.media.file, 90,90) }}" alt="{{ item.user.name }}" title="{{ item.user.name }}">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>

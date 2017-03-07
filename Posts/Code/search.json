@@ -1,0 +1,10 @@
+{
+    "title": "Posts",
+    "alias": "posts",
+    "table_name": "social_posts",
+    "title_field": "",
+    "content_field": "post",
+    "image_field": "",
+    "published": "1",
+    "is_processed": "0"
+}

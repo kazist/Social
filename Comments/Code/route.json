@@ -1,0 +1,297 @@
+{
+    "frontend": [{
+            "title": "Comment List",
+            "description": "Management of Comments.",
+            "controller": "Social\\Comments\\Code\\Controllers\\CommentsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "social.comments",
+            "route": "social/comments",
+            "arguments": "",
+            "keywords": "comment, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Comment ",
+            "description": "Add Comment .",
+            "controller": "Social\\Comments\\Code\\Controllers\\CommentsController::addAction",
+            "unique_name": "social.comments.add",
+            "route": "social/comments/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "comment, ",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"],
+                "MODERATOR": ["can_add"],
+                "USER": ["can_add"]
+            }
+        }, {
+            "title": "Edit Comment {{ item.name }}",
+            "description": "Edit Comment {{ item.name }}.",
+            "controller": "Social\\Comments\\Code\\Controllers\\CommentsController::editAction",
+            "unique_name": "social.comments.edit",
+            "route": "social/comments/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "comment, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }, {
+            "title": "Comment Detail: {{ item.name }}",
+            "description": "Comment Detail: {{ item.name }}",
+            "controller": "Social\\Comments\\Code\\Controllers\\CommentsController::detailAction",
+            "unique_name": "social.comments.detail",
+            "route": "social/comments/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "comment, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Comment Delete: {{ item.name }}",
+            "description": "Comment Delete: {{ item.name }}",
+            "controller": "Social\\Comments\\Code\\Controllers\\CommentsController::deleteAction",
+            "unique_name": "social.comments.delete",
+            "route": "social/comments/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "comment, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"],
+                "MODERATOR": ["can_delete", "can_deleteown"],
+                "USER": ["can_deleteown"]
+            }
+        }, {
+            "title": "Comment Save: {{ item.name }}",
+            "description": "Comment Save: {{ item.name }}",
+            "controller": "Social\\Comments\\Code\\Controllers\\CommentsController::saveAction",
+            "unique_name": "social.comments.save",
+            "route": "social/comments/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "comment, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }, {
+            "title": "Save Comments Ajax",
+            "description": "Save Comments Ajax",
+            "controller": "Social\\Comments\\Code\\Controllers\\CommentsController::savecommentajaxAction",
+            "unique_name": "social.comments.savecommentajax",
+            "route": "social/comments/savecommentajax/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "Save Comments, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Delete Comments Ajax",
+            "description": "Delete Comments Ajax",
+            "controller": "Social\\Comments\\Code\\Controllers\\CommentsController::deletecommentajaxAction",
+            "unique_name": "social.comments.deletecommentajax",
+            "route": "social/comments/deletecommentajax/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "Delete Comments, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Social\\Comments\\Code\\Controllers\\Admin\\CommentsController::taskAction",
+            "unique_name": "admin.social.comments.task",
+            "route": "admin/social/comments/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "comments, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Comment List",
+            "description": "Management of Comments.",
+            "controller": "Social\\Comments\\Code\\Controllers\\Admin\\CommentsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.social.comments",
+            "route": "admin/social/comments",
+            "arguments": "",
+            "keywords": "comment, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Comment  ",
+            "description": "Add Comment .",
+            "controller": "Social\\Comments\\Code\\Controllers\\Admin\\CommentsController::addAction",
+            "unique_name": "admin.social.comments.add",
+            "route": "admin/social/comments/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "comment, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Add Comment  ",
+            "description": "Add Comment  .",
+            "controller": "Social\\Comments\\Code\\Controllers\\Admin\\CommentsController::addAction",
+            "unique_name": "admin.social.comments.add",
+            "route": "admin/social/comments/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "comment, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Comment {{ item.name }}",
+            "description": "Edit Comment {{ item.name }}.",
+            "controller": "Social\\Comments\\Code\\Controllers\\Admin\\CommentsController::editAction",
+            "unique_name": "admin.social.comments.edit",
+            "route": "admin/social/comments/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "comment, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Comment Detail: {{ item.name }}",
+            "description": "Comment Detail: {{ item.name }}",
+            "controller": "Social\\Comments\\Code\\Controllers\\Admin\\CommentsController::detailAction",
+            "unique_name": "admin.social.comments.detail",
+            "route": "admin/social/comments/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "comment, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Comment Delete: {{ item.name }}",
+            "description": "Comment Delete: {{ item.name }}",
+            "controller": "Social\\Comments\\Code\\Controllers\\Admin\\CommentsController::deleteAction",
+            "unique_name": "admin.social.comments.delete",
+            "route": "admin/social/comments/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "comment, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Comment Save: {{ item.name }}",
+            "description": "Comment Save: {{ item.name }}",
+            "controller": "Social\\Comments\\Code\\Controllers\\Admin\\CommentsController::saveAction",
+            "unique_name": "admin.social.comments.save",
+            "route": "admin/social/comments/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "comment, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

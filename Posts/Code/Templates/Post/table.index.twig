@@ -1,0 +1,21 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Social/Components/assets/css/style.css') }}
+
+{{ set_assets('applications/Social/Components/assets/js/social.js') }}
+
+{% set path_set = addTwigPath( "applications.Social.Components.Templates", twig_object) %}
+
+{% include "social.main.top.menu.twig" ignore missing  %}
+
+<div class="clr"></div>
+<div class="social-body">
+    <div class="col-md-3 social-left">
+        {% include "social.main.summary.twig" ignore missing  %}
+    </div>
+    <div class="social-postlist col-md-9">
+        {% include "social.main.posts.twig" ignore missing  %}
+    </div>
+</div>

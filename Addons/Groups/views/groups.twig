@@ -1,0 +1,37 @@
+
+{{ set_assets('applications/Social/Addons/Groups/assets/css/style.css') }}
+
+<div class="social-group">
+    <ul class="kazi-groups">
+
+        {% if groups|length > 0 %}
+            {% for group in groups %}
+
+                <li class="clearfix">
+                    <img src="{{ group.group_file }}" class="avatar" alt="{{ group.title }}" title="{{ group.title }}" width="30px">
+                    <div class="groups-content">
+                        <div>
+                            <a href="{{ generate_url('social.groups.members.detail', {'id': group.id}) }}" title="{{ group.title }}">
+                                <b>
+                                    {{ group.title }}
+                                </b>
+                            </a>
+                            <br>
+
+                            {% if  group.is_member %}
+                                <a class="btn btn-default btn-flat btn-xs" href="{{ generate_url('social.groups.members.detail', {'id': group.id}) }}" title="Join the Group">Join the Group</a>
+                                <div class="clearfix"></div>
+                            {% else %}
+                                <small>{{ group.total_members }} Members Have Joined.</small>
+                            {% endif %}
+
+                        </div>
+                        <div class="meta">Posted: {{ group.date_created|date('d M Y H:i') }} By: <a href="#" title="{{ group.author_name }}">{{ group.author_name }} </a></div>
+                    </div>
+                </li>
+
+            {% endfor %}
+        {% endif %}
+
+    </ul>
+</div>

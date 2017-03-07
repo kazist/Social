@@ -1,0 +1,33 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Social/Components/assets/css/style.css') }}
+{{ set_assets('applications/Social/Components/assets/js/social.js') }}
+
+{% include "social.main.top.menu.twig" ignore missing  %}
+
+{{ include('social.cover.twig') }}
+{{ include('social.menu.twig') }}
+
+<div class="clr"></div>
+
+<div class="social-body">
+    <div class="col-md-3 social-left">
+        {{ include('social.summary.twig') }}
+    </div>
+
+    <div class="social-photolist col-md-9">
+
+        {% if photolist|length>0 %}
+            {% for photo in photolist %}
+                <div class="col-md-6">
+                    <div class="social-photo">
+                        <img src="{{ resized_image(photo.file,150,150) }}" alt="{{ photo.title }}" title="{{ photo.title }}"/>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+</div>

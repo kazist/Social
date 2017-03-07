@@ -1,0 +1,60 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Social/assets/css/style.css') }}
+
+{{ set_assets('applications/Social/assets/js/social.js') }}
+{{ set_assets('applications/Social/assets/js/social_general.js') }}
+{{ set_assets('applications/Social/assets/js/social_photos.js') }}
+{{ set_assets('applications/Social/assets/js/social_videos.js') }}
+{{ set_assets('applications/Social/assets/js/social_audios.js') }}
+{{ set_assets('applications/Social/assets/js/social_events.js') }}
+{{ set_assets('applications/Social/assets/js/social_like.js') }}
+{{ set_assets('applications/Social/assets/js/social_sharing.js') }}
+{{ set_assets('applications/Social/assets/js/social_comment.js') }}
+
+{% set social_view = 'member' %}
+
+{% set path_set = addTwigPath( "applications.Social.generalviews") %}
+
+<div class="clearfix"></div>
+
+{% include "social.main.top.menu.twig" ignore missing  %}
+
+<div class="social-members">
+    {% if items|length > 0 %}
+        {% for item in items %}
+
+            {% set item_url =  generate_url('social.members.detail', {'user_id': item.user_id}) %}
+
+            <div class="col-sm-6">
+                <div class="social-member">
+
+                    <img class="social-member-cover" src="{{ resized_image(item.cover_file, 500, 120) }}">
+
+                    <a href="{{ item_url }}" title="{{ item.user.name }}">
+                        <img class="social-member-avatar" src="{{ resized_image(item.avatar_file, 90,90) }}" alt="{{ item.user.name }}" title="{{ item.user.name }}">
+                    </a>
+
+                    <div>
+                        {% if not item.is_friend %}
+                            <a class="btn btn-primary btn-sm pull-right" href="{{ generate_url('social.members.friends.save',{'user_id':item.user_id}) }}">Friend Request</a>
+                        {% endif %}
+                        <b>Name: </b>
+                        <a href="{{ item_url }}" title="{{item.user.name}}">
+                            {{ item.user.name|truncate(20)|default(' -- Not Provided -- ') }}
+                        </a><br>
+                        <b>Gender: </b> {{ item.gender }} <br>
+                        <b>Location: </b> {{ item.city }} {{ item.country_id_name }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <div class="no_posts_found">
+            No Members Found.
+        </div>
+    {% endif %}
+</div>

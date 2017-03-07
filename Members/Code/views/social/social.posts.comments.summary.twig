@@ -1,0 +1,30 @@
+<div class="post-comments-summary"> 
+    {% if post.likes.has_liked %}
+        You 
+    {% endif %}
+
+    {% if post.likes.list|length>0 %}
+        {% for key,like in post.likes.list %}
+            {% if (post.likes.has_liked and post.likes.list|length == 1) or (post.likes.has_liked and post.likes.list|length == 2 and key==1) %}
+                and 
+            {% else %}
+                ,
+            {% endif %}
+
+            {{ like.name|default('Anonymous') }}
+
+        {% endfor%}
+    {% endif %}
+    {% if not post.likes.has_liked and post.likes.count > 2 %}
+        and
+        {{ post.likes.count - 2 }} others 
+    {% elseif post.likes.has_liked and post.likes.count > 3 %}
+        and
+        {{ post.likes.count - 3 }} others 
+    {% endif %}
+    like this post.<br>
+
+    {% if post.share.count %}
+        {{ post.likes.count }} Shared this Post.
+    {% endif %}
+</div>

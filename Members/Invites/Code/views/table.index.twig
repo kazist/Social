@@ -1,0 +1,53 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Social/assets/css/style.css') }}
+
+{{ set_assets('applications/Social/assets/js/social.js') }}
+{{ set_assets('applications/Social/assets/js/social_general.js') }}
+{{ set_assets('applications/Social/assets/js/social_photos.js') }}
+{{ set_assets('applications/Social/assets/js/social_videos.js') }}
+{{ set_assets('applications/Social/assets/js/social_audios.js') }}
+{{ set_assets('applications/Social/assets/js/social_events.js') }}
+{{ set_assets('applications/Social/assets/js/social_like.js') }}
+{{ set_assets('applications/Social/assets/js/social_sharing.js') }}
+{{ set_assets('applications/Social/assets/js/social_comment.js') }}
+
+{% set path_set = addTwigPath( "applications.Social.generalviews") %}
+
+<div class="clearfix"></div>
+
+{% include "social.main.top.menu.twig" ignore missing  %}
+
+<div class="social-group-addition">
+    <a class="btn btn-default btn-sm" href="{{ generate_url('social.members.invites.add') }}" title="Add Invite"> 
+        <i class="fa fa-plus"></i>
+        Add Invite
+    </a>
+    <div class="clr"></div>
+</div>
+
+<div class="social-members">
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>Email</th>
+        </tr>
+        {% if items|length > 0 %}
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.email }}</td>
+                </tr>
+
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td>
+                    <div class="no_posts_found">
+                        No Invite Found.
+                    </div>
+                </td>
+            </tr>
+        {% endif %}
+    </table>
+</div>

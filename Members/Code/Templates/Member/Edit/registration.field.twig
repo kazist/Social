@@ -1,0 +1,12 @@
+{# empty Twig template #}
+{% import "form.macro.twig" as forms %}
+
+{{ forms.input('name', 'text', context.user.name, 'Name')  }}
+
+{{ forms.input('username', 'text', context.user.username, 'User Name')  }}
+
+{{ forms.input('email', 'text', context.user.email, 'Email')  }}
+
+{{ forms.input('password', 'password', context.user.password, 'Password')  }}
+
+{{ forms.input('password_again', 'password', context.user.password_again, 'Enter Password Again')  }}

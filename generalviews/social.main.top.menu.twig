@@ -1,0 +1,46 @@
+
+{% set member = callFunction( "Social.Members.Code.Models.MembersModel", 'getMemberDetail' ) %}
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ generate_url('social.members.detail')}}">
+                <i class="fa fa-home"></i>
+                Home
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="{{ generate_url('social.members.detail')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ generate_url('social.members.detail', {'user_id':document.user.id})}}">View Profile</a></li>
+                        <li><a href="{{ generate_url('social.members.edit', {'user_id':document.user.id, 'action':'changepicture'})}}">Change Profile Picture</a></li>
+                        <li><a href="{{ generate_url('social.members.edit', {'user_id':document.user.id, 'action':'changeavatar'})}}">Change Profile Video</a></li>
+                        <li><a href="{{ generate_url('social.members.edit', {'user_id':document.user.id})}}">Edit Profile</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Friends<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ generate_url('social.members.friends', {'user_id':document.user.id})}}">Friends</a></li>
+                        <li><a href="{{ generate_url('social.members.invites', {'user_id':document.user.id})}}">Invites</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ generate_url('social.groups')}}">Groups</a></li>
+                <li><a href="{{ generate_url('social.posts.images')}}">Photos</a></li>
+                <li><a href="{{ generate_url('social.posts.videos')}}">Videos</a></li>
+                <li><a href="{{ generate_url('social.events')}}">Events</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,39 @@
+<div class="post-wrapper">
+
+    {{ post.post }}
+
+    {% if post.photos|length > 0 %}
+        {{ include('social.posts.content.photo.twig') }}
+    {% endif %}
+
+
+    {% if post.videos|length > 0 %}
+        <div class="post-videos">
+            {% for key,video in post.videos %}
+                <div class="post-video">
+                    {{ include('social.posts.content.video.twig') }}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="clr"></div>
+    {% endif %}
+
+
+
+    {% if post.audios|length > 0 %}
+        <div class="post-audios">
+            {% for key,audio in post.audios %}
+                <div class="post-audio">
+                    {{ include('social.posts.content.audio.twig') }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="clr"></div>
+    {% endif %}
+
+
+    {% if post.events|length > 0 %}
+        {{ include('social.posts.content.event.twig') }}
+    {% endif %}
+
+</div>

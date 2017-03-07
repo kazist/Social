@@ -1,0 +1,49 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Social/Components/assets/css/style.css') }}
+{{ set_assets('applications/Social/Components/assets/js/social.js') }}
+
+{% include "social.main.top.menu.twig" ignore missing  %}
+
+{{ include('social.cover.twig') }}
+{{ include('social.menu.twig') }}
+
+<div class="social-body">
+    <div class="col-md-3 social-left">
+        {{ include('social.summary.twig') }}
+    </div>
+
+    <div class="social-grouplist col-md-9">
+        <br>
+        <br>
+
+        <div class="social-group-addition text-right">
+            <a class="btn btn-default btn-sm" href="{{ friendly_url('app=social&com=group&subset=group&view=edit') }}" title="Add Group"> 
+                <i class="fa fa-plus"></i>
+                Add Group
+            </a>
+        </div>
+
+        <br>
+        <div class="social-groups">
+
+            {% if grouplist|length>0 %}
+                {% for group in grouplist %}
+                    <div class="social-group">
+                        <img src="{{ resized_image(group.image_file,90,90) }}" align="left" data-toggle="tooltip"  alt="{{ group.description|striptags|truncate(50)|raw }}" title="{{ group.description|striptags|truncate(50)|raw }}"/>
+                        <b class="text-capitalize">{{ group.title }}</b><br>
+                        {{ group.description|striptags|truncate(300)|raw }}
+                        <br>
+                        <a class=" btn btn-default btn-xs"> Join Group</a>
+                        <div class="clr"></div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,58 @@
+Social\Members\Invites\Code\Tables\Invites:
+  table: social_members_invites
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      name: name
+      type: string
+      length: 255
+      nullable: true
+    email:
+      name: email
+      type: string
+      length: 255
+      nullable: false
+    user_id:
+      name: user_id
+      type: integer
+      length: 11
+      nullable: true
+    friend_id:
+      name: friend_id
+      type: integer
+      length: 11
+      nullable: true
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: true
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: false
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: false
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: false
+  indexes:
+    user_id_index:
+      columns: [user_id]
+    friend_id_index:
+      columns: [friend_id]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

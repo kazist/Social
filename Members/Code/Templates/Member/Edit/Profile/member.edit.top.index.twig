@@ -1,0 +1,41 @@
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Social/Components/assets/js/member.js') }}
+{{ set_assets('applications/Social/Components/assets/js/intlTelInput.js') }}
+
+{{ set_assets('applications/Social/Components/assets/css/style.css') }}
+{{ set_assets('applications/Social/Components/assets/css/intlTelInput.css') }}
+
+
+<style>
+
+
+    .registration-buttons .btn{
+        text-transform: capitalize;
+    }
+    .location_id-group{
+        display: none;
+    }
+
+    .inviter_detail-group #date_arr{
+        width: auto;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .inviter_detail-group #month_arr{
+        width: auto;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .inviter_detail-group #year_arr{
+        width: auto;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+    }
+</style>
+
+
+

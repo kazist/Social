@@ -1,0 +1,49 @@
+{
+    "title": "Social",
+    "description": "Social Advertisement",
+    "alias": "social",
+    "icon": "fa-picture-o",
+    "home_link": "social\/members",
+    "is_core": "1",
+    "menulist": [{
+            "title": "Activities",
+            "alias": "admin_social_activities",
+            "url": "admin/social/activities",
+            "children": []
+        }, {
+            "title": "Comments",
+            "alias": "admin_social_comments",
+            "url": "admin/social/comments",
+            "children": []
+        }, {
+            "title": "Events",
+            "alias": "admin_social_events",
+            "url": "admin/social/events",
+            "children": []
+        }, {
+            "title": "Groups",
+            "alias": "admin_social_groups",
+            "url": "admin/social/groups",
+            "children": []
+        }, {
+            "title": "Members",
+            "alias": "admin_social_members",
+            "url": "admin/social/members",
+            "children": []
+        }, {
+            "title": "Posts",
+            "alias": "admin_social_posts",
+            "url": "admin/social/posts",
+            "children": []
+        }, {
+            "title": "Setup",
+            "alias": "admin_social_setup",
+            "url": "admin/social/setup",
+            "children": [{
+                    "title": "Agreements",
+                    "alias": "admin_social_setup_agreements",
+                    "url": "admin/social/setup/agreements",
+                    "children": []
+                }]
+        }]
+}

@@ -1,0 +1,10 @@
+{
+    "name": "post",
+    "title": "Post Listing",
+    "explanation": "Post Listing",
+    "description": "Post Listing",
+    "version": 1,
+    "icon": "assets\/social\/addons\/post\/icon.png",
+    "extension": "addon",
+    "path": "social\/addons\/post\/"
+}

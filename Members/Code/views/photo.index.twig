@@ -1,0 +1,48 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Social/assets/css/style.css') }}
+
+{{ set_assets('applications/Social/assets/js/social.js') }}
+{{ set_assets('applications/Social/assets/js/social_general.js') }}
+{{ set_assets('applications/Social/assets/js/social_photos.js') }}
+{{ set_assets('applications/Social/assets/js/social_videos.js') }}
+{{ set_assets('applications/Social/assets/js/social_audios.js') }}
+{{ set_assets('applications/Social/assets/js/social_events.js') }}
+{{ set_assets('applications/Social/assets/js/social_like.js') }}
+{{ set_assets('applications/Social/assets/js/social_sharing.js') }}
+{{ set_assets('applications/Social/assets/js/social_comment.js') }}
+
+{% set social_view = 'photo' %}
+
+{% include "social.main.top.menu.twig" ignore missing  %}
+
+{{ include('social.cover.twig') }}
+{{ include('social.menu.twig') }}
+
+<div class="clearfix"></div>
+
+<div class="social-body">
+    <div class="col-md-3 social-left">
+        {{ include('social.summary.twig') }}
+    </div>
+
+    <div class="social-photolist col-md-9">
+
+        {% if photolist|length>0 %}
+            {% for photo in photolist %}
+                <div class="col-md-4">
+                    <div class="social-photo">
+                        <img src="{{ resized_image(photo.file,250,250) }}" alt="{{ photo.title }}" title="{{ photo.title }}"/>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="no_posts_found">
+                No Photos Found.
+            </div>
+        {% endif %}
+
+    </div>
+</div>

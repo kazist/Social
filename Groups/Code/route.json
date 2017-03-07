@@ -1,0 +1,240 @@
+{
+    "frontend": [{
+            "title": "Group List",
+            "description": "Management of Groups.",
+            "controller": "Social\\Groups\\Code\\Controllers\\GroupsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "social.groups",
+            "route": "social/groups",
+            "arguments": "",
+            "keywords": "group, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Group ",
+            "description": "Add Group .",
+            "controller": "Social\\Groups\\Code\\Controllers\\GroupsController::addAction",
+            "unique_name": "social.groups.add",
+            "route": "social/groups/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "group,add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"],
+                "MODERATOR": ["can_add"],
+                "USER": ["can_add"]
+            }
+        }, {
+            "title": "Edit Group {{ item.name }}",
+            "description": "Edit Group {{ item.name }}.",
+            "controller": "Social\\Groups\\Code\\Controllers\\GroupsController::editAction",
+            "unique_name": "social.groups.edit",
+            "route": "social/groups/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "group, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }, {
+            "title": "Group Detail: {{ item.name }}",
+            "description": "Group Detail: {{ item.name }}",
+            "controller": "Social\\Groups\\Code\\Controllers\\GroupsController::detailAction",
+            "unique_name": "social.groups.detail",
+            "route": "social/groups/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "group, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Group Delete: {{ item.name }}",
+            "description": "Group Delete: {{ item.name }}",
+            "controller": "Social\\Groups\\Code\\Controllers\\GroupsController::deleteAction",
+            "unique_name": "social.groups.delete",
+            "route": "social/groups/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "group, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"],
+                "MODERATOR": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Group Save: {{ item.name }}",
+            "description": "Group Save: {{ item.name }}",
+            "controller": "Social\\Groups\\Code\\Controllers\\GroupsController::saveAction",
+            "unique_name": "social.groups.save",
+            "route": "social/groups/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "group, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Jobs\\Groups\\Code\\Controllers\\Admin\\GroupsController::taskAction",
+            "unique_name": "admin.social.groups.task",
+            "route": "admin/social/groups/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "groups, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Group List",
+            "description": "Management of Groups.",
+            "controller": "Social\\Groups\\Code\\Controllers\\Admin\\GroupsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.social.groups",
+            "route": "admin/social/groups",
+            "arguments": "",
+            "keywords": "group, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Group ",
+            "description": "Add Group  .",
+            "controller": "Social\\Groups\\Code\\Controllers\\Admin\\GroupsController::addAction",
+            "unique_name": "admin.social.groups.add",
+            "route": "admin/social/groups/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "group, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Group {{ item.name }}",
+            "description": "Edit Group {{ item.name }}.",
+            "controller": "Social\\Groups\\Code\\Controllers\\Admin\\GroupsController::editAction",
+            "unique_name": "admin.social.groups.edit",
+            "route": "admin/social/groups/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "group, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Group Detail: {{ item.name }}",
+            "description": "Group Detail: {{ item.name }}",
+            "controller": "Social\\Groups\\Code\\Controllers\\Admin\\GroupsController::detailAction",
+            "unique_name": "admin.social.groups.detail",
+            "route": "admin/social/groups/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "group, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Group Delete: {{ item.name }}",
+            "description": "Group Delete: {{ item.name }}",
+            "controller": "Social\\Groups\\Code\\Controllers\\Admin\\GroupsController::deleteAction",
+            "unique_name": "admin.social.groups.delete",
+            "route": "admin/social/groups/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "group, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Group Save: {{ item.name }}",
+            "description": "Group Save: {{ item.name }}",
+            "controller": "Social\\Groups\\Code\\Controllers\\Admin\\GroupsController::saveAction",
+            "unique_name": "admin.social.groups.save",
+            "route": "admin/social/groups/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "group, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

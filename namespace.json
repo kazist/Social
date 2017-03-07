@@ -1,0 +1,78 @@
+{
+    "SocialActivities": {
+        "namespace": "Social\\Activities",
+        "controller": "ActivitiesController"
+    },
+    "SocialComments": {
+        "namespace": "Social\\Comments",
+        "controller": "CommentsController"
+    },
+    "SocialCommentsLikes": {
+        "namespace": "Social\\Comments\\Likes",
+        "controller": "LikesController"
+    },
+    "SocialEvents": {
+        "namespace": "Social\\Events",
+        "controller": "EventsController"
+    },
+    "SocialGroups": {
+        "namespace": "Social\\Groups",
+        "controller": "GroupsController"
+    },
+    "SocialGroupsInvites": {
+        "namespace": "Social\\Groups\\Invites",
+        "controller": "InvitesController"
+    },
+    "SocialGroupsMembers": {
+        "namespace": "Social\\Groups\\Members",
+        "controller": "MembersController"
+    },
+    "SocialGroupsPosts": {
+        "namespace": "Social\\Groups\\Posts",
+        "controller": "PostsController"
+    },
+    "SocialLikes": {
+        "namespace": "Social\\Likes",
+        "controller": "LikesController"
+    },
+    "SocialMembers": {
+        "namespace": "Social\\Members",
+        "controller": "MembersController"
+    },
+    "SocialMembersFriends": {
+        "namespace": "Social\\Members\\Friends",
+        "controller": "FriendsController"
+    },
+    "SocialMembersInvites": {
+        "namespace": "Social\\Members\\Invites",
+        "controller": "InvitesController"
+    },
+    "SocialPosts": {
+        "namespace": "Social\\Posts",
+        "controller": "PostsController"
+    },
+    "SocialPostsVideos": {
+        "namespace": "Social\\Posts\\Videos",
+        "controller": "VideosController"
+    },
+    "SocialPostsImages": {
+        "namespace": "Social\\Posts\\Images",
+        "controller": "ImagesController"
+    },
+    "SocialPostsAudios": {
+        "namespace": "Social\\Posts\\Audios",
+        "controller": "AudiosController"
+    },
+    "SocialPostsMedia": {
+        "namespace": "Social\\Posts\\Media",
+        "controller": "MediaController"
+    },
+    "SocialSetupAgreements": {
+        "namespace": "Social\\Setup\\Agreements",
+        "controller": "AgreementsController"
+    },
+    "SocialMembersLikes": {
+        "namespace": "Social\\Members\\Likes",
+        "controller": "LikesController"
+    }
+}

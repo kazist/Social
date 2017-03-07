@@ -1,0 +1,7 @@
+
+{% set path_set = addTwigPath( "applications.Social.generalviews.header") %}
+
+{% set member = callFunction( "Social.Members.Code.Models.MembersModel", 'getMemberDetail' ) %}
+
+{% include "social.cover.twig" ignore missing with member %}
+{% include "social.menu.twig" ignore missing with member %}

@@ -1,0 +1,30 @@
+{# empty Twig template #}
+
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Social/Components/assets/css/style.css') }}
+{{ set_assets('applications/Social/Components/assets/js/social.js') }}
+
+{% include "social.main.top.menu.twig" ignore missing  %}
+
+{{ include('social.cover.twig') }}
+{{ include('social.menu.twig') }}
+
+<div class="clr"></div>
+<div class="social-body">
+    <div class="col-md-3 social-left">
+        {{ include('social.summary.twig') }}
+    </div>
+    <div class="social-videolist col-md-9">
+
+        {% if videolist|length>0 %}
+            {% for video in videolist %}
+                <div class="col-md-6">
+                    <div class="social-video">
+                        {{ include('social.posts.content.video.twig') }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

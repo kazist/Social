@@ -1,0 +1,9 @@
+{
+    "name": "social",
+    "title": "Social Engine",
+    "icon": "icons\/social.png",
+    "extension": "component",
+    "path": "social\/",
+    "description": "Social Engine",
+    "version": 1
+}

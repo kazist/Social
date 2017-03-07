@@ -1,0 +1,105 @@
+Social\Members\Code\Tables\Members:
+  table: social_members
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    avatar:
+      name: avatar
+      type: string
+      length: 255
+      nullable: true
+    cover:
+      name: cover
+      type: integer
+      length: 11
+      nullable: true
+    dob:
+      name: dob
+      type: date
+      nullable: true
+    gender:
+      name: gender
+      type: string
+      length: 255
+      nullable: true
+    user_id:
+      name: user_id
+      type: integer
+      length: 11
+      nullable: false
+    country_id:
+      name: country_id
+      type: integer
+      length: 11
+      nullable: true
+    location_id:
+      name: location_id
+      type: integer
+      length: 11
+      nullable: true
+    city:
+      name: city
+      type: string
+      length: 255
+      nullable: true
+    inviter_id:
+      name: inviter_id
+      type: integer
+      length: 11
+      nullable: false
+    id_passport:
+      name: id_passport
+      type: string
+      length: 255
+      nullable: true
+    phone:
+      name: phone
+      type: string
+      length: 255
+      nullable: true
+    address:
+      name: address
+      type: text
+      nullable: true
+    points:
+      name: points
+      type: integer
+      length: 11
+      nullable: true
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: false
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: false
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: false
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: false
+  indexes:
+    user_id_index:
+      columns: [user_id]
+    country_id_index:
+      columns: [country_id]
+    location_id_index:
+      columns: [location_id]
+    inviter_id_index:
+      columns: [inviter_id]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

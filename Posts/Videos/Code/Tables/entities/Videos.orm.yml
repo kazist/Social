@@ -1,0 +1,65 @@
+Social\Posts\Videos\Code\Tables\Videos:
+  table: social_posts_videos
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    post_id:
+      name: post_id
+      type: integer
+      length: 11
+      nullable: false
+    type:
+      name: type
+      type: string
+      length: 255
+      nullable: false
+    image:
+      name: image
+      type: integer
+      length: 11
+      nullable: true
+    file:
+      name: file
+      type: integer
+      length: 11
+      nullable: true
+    youtube_code:
+      name: youtube_code
+      type: string
+      length: 255
+      nullable: true
+    embed_code:
+      name: embed_code
+      type: text
+      nullable: true
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: false
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: false
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: false
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: false
+  indexes:
+    post_id_index:
+      columns: [post_id]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

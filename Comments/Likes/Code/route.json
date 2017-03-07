@@ -1,0 +1,241 @@
+{
+    "frontend": [{
+            "title": "Like List",
+            "description": "Management of Likes.",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\LikesController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "social.comments.likes",
+            "route": "social/comments/likes",
+            "arguments": "",
+            "keywords": "like, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Like ",
+            "description": "Add Like .",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\LikesController::addAction",
+            "unique_name": "social.comments.likes.add",
+            "route": "social/comments/likes/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "like, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"],
+                "MODERATOR": ["can_add"],
+                "USER": ["can_add"]
+            }
+        }, {
+            "title": "Edit Like {{ item.name }}",
+            "description": "Edit Like {{ item.name }}.",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\LikesController::editAction",
+            "unique_name": "social.comments.likes.edit",
+            "route": "social/comments/likes/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "like, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }, {
+            "title": "Like Detail: {{ item.name }}",
+            "description": "Like Detail: {{ item.name }}",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\LikesController::detailAction",
+            "unique_name": "social.comments.likes.detail",
+            "route": "social/comments/likes/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "like, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Like Delete: {{ item.name }}",
+            "description": "Like Delete: {{ item.name }}",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\LikesController::deleteAction",
+            "unique_name": "social.comments.likes.delete",
+            "route": "social/comments/likes/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "like, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"],
+                "MODERATOR": ["can_delete", "can_deleteown"],
+                "USER": ["can_deleteown"]
+            }
+        }, {
+            "title": "Like Save: {{ item.name }}",
+            "description": "Like Save: {{ item.name }}",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\LikesController::saveAction",
+            "unique_name": "social.comments.likes.save",
+            "route": "social/comments/likes/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "like, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_write", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\Admin\\LikesController::taskAction",
+            "unique_name": "admin.social.comments.likes.task",
+            "route": "admin/social/comments/likes/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "likes, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Like List",
+            "description": "Management of Likes.",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\Admin\\LikesController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.social.comments.likes",
+            "route": "admin/social/comments/likes",
+            "arguments": "",
+            "keywords": "like, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Like  ",
+            "description": "Add Like .",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\Admin\\LikesController::addAction",
+            "unique_name": "admin.social.comments.likes.add",
+            "route": "admin/social/comments/likes/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "like, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Like {{ item.name }}",
+            "description": "Edit Like {{ item.name }}.",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\Admin\\LikesController::editAction",
+            "unique_name": "admin.social.comments.likes.edit",
+            "route": "admin/social/comments/likes/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "like, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Like Detail: {{ item.name }}",
+            "description": "Like Detail: {{ item.name }}",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\Admin\\LikesController::detailAction",
+            "unique_name": "admin.social.comments.likes.detail",
+            "route": "admin/social/comments/likes/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "like, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Like Delete: {{ item.name }}",
+            "description": "Like Delete: {{ item.name }}",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\Admin\\LikesController::deleteAction",
+            "unique_name": "admin.social.comments.likes.delete",
+            "route": "admin/social/comments/likes/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "like, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Like Save: {{ item.name }}",
+            "description": "Like Save: {{ item.name }}",
+            "controller": "Social\\Comments\\Likes\\Code\\Controllers\\Admin\\LikesController::saveAction",
+            "unique_name": "admin.social.comments.likes.save",
+            "route": "admin/social/comments/likes/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "like, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

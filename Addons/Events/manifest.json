@@ -1,0 +1,10 @@
+{
+    "name": "events",
+    "title": "Events Listing",
+    "explanation": "Events Listing",
+    "description": "Events Listing",
+    "version": 1,
+    "icon": "assets\/social\/addons\/events\/icon.png",
+    "extension": "addon",
+    "path": "social\/addons\/events\/"
+}

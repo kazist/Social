@@ -1,0 +1,24 @@
+
+{{ set_assets('applications/Social/Addons/Post/assets/css/style.css') }}
+
+<div class="blog-comment">
+    <ul class="kazi-comments">
+
+        {% if latestposts|length > 0 %}
+            {% for latestpost in latestposts %}
+
+                <li class="clearfix">
+                    <img src="{{ resized_image(latestpost.user_avatar,48,48) }}" class="avatar" alt="{{ latestpost.author_name }}" title="{{ latestpost.author_name }}" width="48px">
+                    <div class="post-comments">
+                        <div class="meta">{{ latestpost.date_created|date('d M Y H:i') }} <a href="#" title="{{ latestpost.author_name }}">{{ latestpost.author_name }} </a> says :</div>
+                        <div>
+                            {{ latestpost.post|striptags|truncate(200)|raw }}
+                        </div>
+                    </div>
+                </li>
+
+            {% endfor %}
+        {% endif %}
+
+    </ul>
+</div>

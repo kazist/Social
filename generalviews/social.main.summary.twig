@@ -1,0 +1,7 @@
+
+{% set path_set = addTwigPath( "applications.Social.generalviews.summary") %}
+
+{% set member = callFunction( "Social.Members.Code.Models.MembersModel", 'getMemberDetail' ) %}
+{% set user = callFunction( "Social.Members.Code.Models.MembersModel", 'getUser' ) %}
+
+{% include "social.summary.twig" ignore missing  with {'member': member, 'user': user} %}

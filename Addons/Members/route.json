@@ -1,0 +1,22 @@
+{
+    "frontend": [{
+            "title": "Members List",
+            "description": "Management of Members.",
+            "controller": "Social\\Addons\\Members\\Controllers\\MembersController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "social.addons.members",
+            "route": "social/addons/members",
+            "arguments": "",
+            "keywords": "latest, members, list, addons",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }]
+
+} 	

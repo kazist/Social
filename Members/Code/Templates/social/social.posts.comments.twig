@@ -1,0 +1,69 @@
+{% import _self as comment_macro %}
+
+<div class="post-comment-list"> 
+    {% if post.comments.list|length>0 %}
+        {% for comment in post.comments.list %}
+            {{ comment_macro.comment(user, post, comment, 0) }}
+        {% endfor%}
+    {% endif %}
+</div>
+
+{% macro comment(user, post, comment, margin_left) %}
+
+    {% import _self as comment_macro %}
+
+    <div class="post-comment-single" style="margin-left:{{  margin_left }}px" comment_id="{{ comment.id}}"> 
+        <div class="post-comment-avatar">
+            <img src="{{ resized_image(comment.avatar, 150,150) }}" alt="{{ user.name }}" title="{{ user.name }}" align="left"/>
+        </div>
+        <div class="post-comment-input">
+            <div class="post-comment-content ">
+                {% set comment_content = comment.comment|default('---Not Defined---') %}
+                {{ comment_content }}
+                {% if document.user.id == comment.created_by%}
+                    <input type="hidden" name="comment_content" value="{{ comment_content }}"/>
+                {% endif %}
+            </div>
+
+            <ul class="comment-like-share">
+                {% if document.user.id %}
+                    {% if document.user.id != comment.created_by %}
+                        <li>
+                            <a class="like-to-comment" item_id="{{ comment.id }}" post_id="{{ post.id }}">
+                                {% if comment.likes.has_liked %}
+                                    UnLike 
+                                {% else %}
+                                    Like 
+                                {% endif %}
+                            </a> 
+                        </li>
+                        <li> <a class="reply-to-comment" item_id="{{ post.id}}">Reply</a> </li>
+                        {% endif %}
+                        {% if document.user.id == comment.created_by %}
+                        <li> <a class="edit-to-comment" item_id="{{ post.id }}">Edit</a> </li>
+                        <li> <a class="delete-to-comment" item_id="{{ post.id }}" comment_id="{{ comment.id }}">Delete</a> </li>
+
+                    {% endif %}
+                    <li> {{ comment.date_created|date('d M Y H:i') }} </li>
+
+                    {% if comment.likes.count>0 %}
+                        <li> 
+                            <span class="post_activity">
+                                <i class="fa fa-thumbs-up"></i> {{ comment.likes.count }}
+                            </span>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    {% if comment.children %}
+        {% if comment.children|length>0 %}
+            {% for comment in comment.children %}
+                {{ comment_macro.comment(user, post, comment, margin_left + 10) }}
+            {% endfor%}
+        {% endif %}
+    {% endif %}
+
+{% endmacro %}

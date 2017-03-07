@@ -1,0 +1,15 @@
+{
+    "layout": [{
+            "tracking_id": "1",
+            "unique_name": "social.members.friends.friend.request",
+            "subject": "You have a new Friend Request from {{ user.name }}",
+            "sms": "You have a new Friend Request from {{ user.name }}",
+            "body": "Dear {{ friend.name }}"
+        }, {
+            "tracking_id": "2",
+            "unique_name": "social.members.friends.user.request",
+            "subject": "You have sent a Friend Request to {{ friend.name }}",
+            "sms": "You have sent a Friend Request to {{ friend.name }}",
+            "body": "Dear {{ user.name }}"
+        }]
+}
