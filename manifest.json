@@ -1,9 +1,9 @@
 {
-    "name": "social",
+    "name": "kazist/social",
     "title": "Social Engine",
     "icon": "icons\/social.png",
     "extension": "component",
-    "path": "social\/",
+    "path": "applications/Social/",
     "description": "Social Engine",
     "version": 1
 }
