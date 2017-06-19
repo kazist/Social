@@ -21,10 +21,10 @@ member = function () {
 
             member.changePhoneFlag(html.find('#country_id'));
 
-            var default_inviter =parseInt(html.find('#default_inviter').val());
-            
-            if(default_inviter){
-                   jQuery('.registration-button').show();
+            var default_inviter = parseInt(html.find('#default_inviter').val());
+
+            if (default_inviter) {
+                jQuery('.registration-button').show();
             }
 
             html.find('#captcha').val('');
@@ -62,6 +62,13 @@ member = function () {
 
             html.find('.search-inviter').on('click', function () {
                 member.getMemberInviter(jQuery(this));
+            });
+
+            html.find('.registration-button').on('click', function () {
+                jQuery('.select_inviter').hide();
+                jQuery('.registration-button').show();
+                jQuery('.account_detail').show();
+                jQuery('.personal_detail').show();
             });
 
             html.find('.refresh-captcha').on('click', function () {
@@ -201,7 +208,8 @@ member = function () {
                         + '<b>Phone: </b> ' + user.phone + '<br>'
                         ;
 
-                jQuery('.registration-button').show();
+                jQuery('.registration-buttons').show();
+
 
             } else {
                 inviter_id = '';
