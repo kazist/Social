@@ -209,7 +209,7 @@ member = function () {
                         ;
 
                 jQuery('.registration-buttons').show();
-
+                jQuery('.registration-button').show();
 
             } else {
                 inviter_id = '';
