@@ -67,8 +67,8 @@ class MembersController extends BaseController {
         $member = $this->model->getMemberDetail();
         $posts = $this->model->getPosts();
         $json_object = $this->model->getJson();
-        
-        if(!$user->id){
+
+        if (!$user->id) {
             return $this->redirectToRoute('social.posts');
         }
 
@@ -252,7 +252,13 @@ class MembersController extends BaseController {
             $dob_date = date('d', strtotime($item->dob));
             $dob_month = date('F', strtotime($item->dob));
             $dob_year = date('Y', strtotime($item->dob));
+        } else {
+            $user->name = null;
+            $user->username = null;
+            $user->first_name = null;
+            $user->second_name = null;
         }
+
         $json_object = $this->model->getJson();
 
         $data_arr['step'] = ($step) ? $step : 1;
