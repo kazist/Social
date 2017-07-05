@@ -5,7 +5,7 @@
     {% if members|length > 0 %}
         {% for member in members %}
             <li>
-                <a href="{{ friendly_url('app=social&com=member&subset=member&view=detail&id='~ member.user_id) }}"  title="{{ member.user_name}}">
+                <a href="{{ friendly_url('social.members.detail', {'id':member.user_id}) }}"  title="{{ member.user_name}}">
                     <img src="{{ resized_image(member.avatar_image, 48,48) }}" alt="{{ member.user_name}}" title="{{ member.user_name}}">
                 </a>
             </li>

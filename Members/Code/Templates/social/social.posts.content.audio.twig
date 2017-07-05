@@ -1,9 +1,0 @@
-
-{% if audio.type=='file' %}
-    <audio  style="width:100%; height: 300px;" controls>
-        <source src="{{ audio.media_file }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </audio>
-{% elseif audio.type=='embed' %}
-    {{ audio.embed_code|raw }}
-{% endif %}
