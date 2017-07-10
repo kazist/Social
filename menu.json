@@ -2,47 +2,55 @@
     "title": "Social",
     "description": "Social Advertisement",
     "alias": "social",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-share-alt-square",
     "home_link": "social\/members",
     "is_core": "1",
     "menulist": [{
             "title": "Activities",
             "alias": "admin_social_activities",
             "url": "admin/social/activities",
+            "icon": "fa fa-share",
             "children": []
         }, {
             "title": "Comments",
             "alias": "admin_social_comments",
             "url": "admin/social/comments",
+            "icon": "fa fa-comments",
             "children": []
         }, {
             "title": "Events",
             "alias": "admin_social_events",
             "url": "admin/social/events",
+            "icon": "fa fa-calendar",
             "children": []
         }, {
             "title": "Groups",
             "alias": "admin_social_groups",
             "url": "admin/social/groups",
+            "icon": "fa fa-sitemap",
             "children": []
         }, {
             "title": "Members",
             "alias": "admin_social_members",
             "url": "admin/social/members",
+            "icon": "fa fa-users",
             "children": []
         }, {
             "title": "Posts",
             "alias": "admin_social_posts",
             "url": "admin/social/posts",
+            "icon": "fa fa-comments",
             "children": []
         }, {
             "title": "Setup",
             "alias": "admin_social_setup",
             "url": "admin/social/setup",
+            "icon": "fa fa-cogs",
             "children": [{
                     "title": "Agreements",
                     "alias": "admin_social_setup_agreements",
                     "url": "admin/social/setup/agreements",
+                    "icon": "fa fa-thumbs-up",
                     "children": []
                 }]
         }]
