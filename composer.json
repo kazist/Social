@@ -4,6 +4,7 @@
     "keywords": ["kazist", "social manager"],
     "homepage": "https://github.com/kazist/social",
     "license": "LGPL-3.0",
+    "version": "1.0.8",
     "authors": [
         {
             "name": "Dedan Irungu",
