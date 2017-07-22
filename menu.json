@@ -4,6 +4,7 @@
     "alias": "social",
     "icon": "fa fa-share-alt-square",
     "home_link": "social\/members",
+    "path": "applications/Social",
     "is_core": "1",
     "menulist": [{
             "title": "Activities",
