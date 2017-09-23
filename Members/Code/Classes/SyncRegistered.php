@@ -72,6 +72,7 @@ class SyncRegistered {
         $query->leftJoin('uu', '#__social_members', 'sm', 'sm.user_id = uu.id');
         $query->where('sm.id IS NULL');
         $query->orderBy('sm.id');
+         $query->setMaxResults(50);
 
         $records = $query->loadObjectList();
 

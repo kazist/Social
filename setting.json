@@ -1,0 +1,88 @@
+{
+    "title": "Social",
+    "alias": "social",
+    "groups": [{
+            "title": "Social Information",
+            "settings": [{
+                    "name": "recaptcha_site_key",
+                    "label": "Recaptcha Site Key",
+                    "default": "",
+                    "type": "text"
+                }, {
+                    "name": "recaptcha_secret_key",
+                    "label": "Recaptcha Secret Key",
+                    "default": "",
+                    "type": "text"
+                }, {
+                    "name": "default_inviter_id",
+                    "label": "Default Inviter Id",
+                    "default": "",
+                    "type": "text"
+                }, {
+                    "name": "is_forced_inviter",
+                    "label": "Is Forced Inviter",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_separate_names",
+                    "label": "Separate Social Member Name",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_confirm_email",
+                    "label": "Confirm Social Member Email",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_edit_name_readonly",
+                    "label": "Edit Name",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_edit_username_readonly",
+                    "label": "Edit Username",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_edit_email_readonly",
+                    "label": "Edit Email",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_edit_gender_readonly",
+                    "label": "Edit Gender",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_edit_country_id_readonly",
+                    "label": "Edit Country",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_edit_location_id_readonly",
+                    "label": "Edit Location",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_edit_city_readonly",
+                    "label": "Edit City",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_edit_phone_readonly",
+                    "label": "Edit Phone",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_edit_dbo_readonly",
+                    "label": "Edit Date of Birth",
+                    "default": "0",
+                    "type": "yesno"
+                }, {
+                    "name": "social_member_captcha_enable",
+                    "label": "Enable Captcha",
+                    "default": "0",
+                    "type": "yesno"
+                }]
+        }]
+}
