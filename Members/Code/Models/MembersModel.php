@@ -327,6 +327,10 @@ class MembersModel extends BaseModel {
 
         $record = $query->loadObject();
 
+        if ($record->username == '') {
+            $record = new \stdClass();
+        }
+        
         return json_encode($record);
     }
 
