@@ -110,7 +110,6 @@ class MembersModel extends BaseModel {
         $form['phone'] = preg_replace('/\D/', '', $form['phone']);
         $date_str = $form['date_arr'] . '-' . $form['month_arr'] . '-' . $form['year_arr'];
 
-
         $user_obj->name = (trim($form['name']) == '') ? $form['first_name'] . ' ' . $form['second_name'] : $form['name'];
         $user_obj->username = trim(preg_replace("/[^A-Za-z0-9 ]/", '', $form['username']));
         $user_obj->email = trim($form['email']);

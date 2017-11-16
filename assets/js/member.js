@@ -21,9 +21,10 @@ member = function () {
 
             member.changePhoneFlag(html.find('#country_id'));
 
-            var default_inviter = parseInt(html.find('#default_inviter').val());
+            var default_inviter = parseInt(html.find('#inviter_id').val());
 
             if (default_inviter) {
+                jQuery('.registration-buttons').show();
                 jQuery('.registration-button').show();
             }
 

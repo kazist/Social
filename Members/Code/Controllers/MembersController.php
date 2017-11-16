@@ -306,6 +306,13 @@ class MembersController extends BaseController {
 
         $session->set('session_form', $new_form);
         // print_r($session_form); exit;
+        $default_arr = ((int) $form['is_default']) ? array('default' => 'true') : '';
+
+        if ($form['first_name'] == '' && $form['second_name'] == '' && $form['name'] == '') {
+            $msg = 'Account Not added due to some errors;';
+            $factory->enqueueMessage($msg, 'error');
+            $redirect = $this->generateUrl('social.members.register' . $default_arr);
+        }
 
         $this->model = new MembersModel();
         $user_id = $this->model->registerMember($new_form);
@@ -325,7 +332,6 @@ class MembersController extends BaseController {
             $redirect = $this->generateUrl($location);
             $session->clear('session_form');
         } else {
-            $default_arr = ((int) $form['is_default']) ? array('default' => 'true') : '';
 
             $msg = 'Account Not added due to some errors;';
             $factory->enqueueMessage($msg, 'error');
