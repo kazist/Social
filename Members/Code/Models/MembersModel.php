@@ -163,7 +163,7 @@ class MembersModel extends BaseModel {
 
         $captcha_enable = $factory->getSetting('social_member_captcha_enable');
 
-        if ($form['phone'] == '' || strlen((int) $form['phone']) <= 9) {
+        if ($form['phone'] == '' || strlen((int) $form['phone']) <= 8) {
             $factory->enqueueMessage('Phone is a required Field or is Invalid enter 7xx xxx xxx.');
             $is_valid = false;
         }
